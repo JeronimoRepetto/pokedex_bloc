@@ -7,6 +7,67 @@ import 'package:pokedex_bloc/models/pokemon.dart';
 import 'package:pokedex_bloc/models/session.dart';
 
 class MockScreenController extends MockBloc implements ScreenController {
+  List<Pokemon> pokemons = [
+    Pokemon.fromJson(
+      {
+        "height": 7,
+        "id": 1,
+        "name": "Bulbasaur",
+        "sprites": {
+          "back_default":
+              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
+          "front_default":
+              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+          "other": {
+            "dream_world": {
+              "front_default":
+                  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+            }
+          }
+        },
+        "weight": 69
+      },
+    ),
+    Pokemon.fromJson(
+      {
+        "height": 7,
+        "id": 1,
+        "name": "Bulbasaur",
+        "sprites": {
+          "back_default":
+              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
+          "front_default":
+              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+          "other": {
+            "dream_world": {
+              "front_default":
+                  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+            }
+          }
+        },
+        "weight": 69
+      },
+    ),
+    Pokemon.fromJson({
+      "height": 10,
+      "id": 2,
+      "name": "Ivysaur",
+      "sprites": {
+        "back_default":
+            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png",
+        "front_default":
+            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+        "other": {
+          "dream_world": {
+            "front_default":
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
+          }
+        }
+      },
+      "weight": 130
+    })
+  ];
+
   @override
   Future<List<BasicData>> getFilters() async {
     List<BasicData> filters = [
@@ -31,75 +92,14 @@ class MockScreenController extends MockBloc implements ScreenController {
 
   @override
   Future<List<Pokemon>> getPokemons() async {
-    List<Pokemon> pokemons = [
-      Pokemon.fromJson(
-        {
-          "height": 7,
-          "id": 1,
-          "name": "Bulbasaur",
-          "sprites": {
-            "back_default":
-                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
-            "front_default":
-                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-            "other": {
-              "dream_world": {
-                "front_default":
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-              }
-            }
-          },
-          "weight": 69
-        },
-      ),
-      Pokemon.fromJson(
-        {
-          "height": 7,
-          "id": 1,
-          "name": "Bulbasaur",
-          "sprites": {
-            "back_default":
-                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
-            "front_default":
-                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-            "other": {
-              "dream_world": {
-                "front_default":
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-              }
-            }
-          },
-          "weight": 69
-        },
-      ),
-      Pokemon.fromJson({
-        "height": 10,
-        "id": 2,
-        "name": "Ivysaur",
-        "sprites": {
-          "back_default":
-              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png",
-          "front_default":
-              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
-          "other": {
-            "dream_world": {
-              "front_default":
-                  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
-            }
-          }
-        },
-        "weight": 130
-      })
-    ];
-
     return await Future.delayed(const Duration(seconds: 2))
         .then((value) => pokemons);
   }
 
   @override
-  Future<List<Pokemon>> getPokemonsByFilter(BasicData filter) {
-    // TODO: implement getPokemonsByFilter
-    throw UnimplementedError();
+  Future<List<Pokemon>> getPokemonsByFilter(BasicData filter) async {
+    return await Future.delayed(const Duration(seconds: 2))
+        .then((value) => pokemons);
   }
 }
 
