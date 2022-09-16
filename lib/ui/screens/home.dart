@@ -8,7 +8,6 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../models/common/basic_data.dart';
 import '../../models/pokemon.dart';
-import '../../services/pokemon_service.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -162,7 +161,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         IconButton(
                             onPressed: () {
                               Navigator.pop(context);
-                              setState(() {});
                             },
                             icon: Icon(
                               Icons.close,

@@ -69,7 +69,6 @@ class PokemonService {
         'Content-type': 'application/json',
       });
       Pokemon pokemon = pokemonFromJson(result.body);
-      print(pokemon.toJson());
       bool frontDefault = false;
       bool backDefault = false;
       bool dreamFrontDefault = false;
